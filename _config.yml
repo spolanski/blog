@@ -1,5 +1,5 @@
 # Site Settings
-title:               spolanski blog
+title:               Numerical simulations blog
 tagline:
 description:
 baseurl:            #"/blog"
@@ -20,7 +20,7 @@ navigation:
   url: /contact
 
 paginate:            5
-disqus:              #"your-disqus"
+disqus:              spolanskiblog#"your-disqus"
 
 # Build settings
 markdown:            kramdown
