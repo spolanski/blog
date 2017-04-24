@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Working With Jekyll"
-categories: journal
+categories: Personal
 tags: [documentation,sample]
 image:
   feature: bag.jpg

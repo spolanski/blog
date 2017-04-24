@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Welcome to Lagrange!"
-categories: journal
+categories: Personal
 tags: [documentation,sample]
 comments: true
+categories: Personal
 image:
   feature: mountains.jpg
   teaser: mountains-teaser.jpg
