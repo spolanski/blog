@@ -3,6 +3,7 @@ layout: post
 title: "Welcome to Lagrange!"
 categories: journal
 tags: [documentation,sample]
+disqus: disqus_BO4VASjAb2
 image:
   feature: mountains.jpg
   teaser: mountains-teaser.jpg

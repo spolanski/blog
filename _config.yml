@@ -1,6 +1,6 @@
 # Site Settings
 title:               Numerical simulations blog
-tagline:
+tagline:             by spolanski
 description:
 baseurl:            #"/blog"
 url:                #"https://spolanski.github.io"
@@ -20,7 +20,7 @@ navigation:
   url: /contact
 
 paginate:            5
-disqus:              spolanskiblog#"your-disqus"
+disqus:              disqus_BO4VASjAb2#"your-disqus"
 
 # Build settings
 markdown:            kramdown
