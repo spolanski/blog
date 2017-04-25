@@ -14,10 +14,10 @@ author:
 navigation:
 - title: About
   url: /about
-- title: Contact
-  url: /contact
 - title: Categories
   url: /categories
+- title: Contact
+  url: /contact
 
 paginate:            5
 # disqus:              disqus_BO4VASjAb2#"your-disqus"
