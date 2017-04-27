@@ -8,3 +8,8 @@ Since my university time, I have been thinking about writing a blog where I coul
 Another aim of the website is to show people who have nothing in common with engineering that it can be entertaining (not only for nerds). I have noticed that most of the problems related to the fields of Physics and Math are hard to understand because one cannot see the sense of studying it. Students use to ask if the equation and all the funny letters have any real application. The answer is obvious, but to convince a doubted person a whole plot needs to be shown. That is actually quite easy with a usage of numerical simulations.
 
 The last reason why I want blogging is involved with the question about my profession. Usually, when someone is asking what do I do at work, I respond ‘I am an engineer’. For most of the people the answer is enough, but sometimes a person is nice and asks for more details. Then, the stream of words from my mouth does not make any sense for the person I talk to and the situation ends up like in the figure below...
+
+![about](/images/about.png)
+
+
+
