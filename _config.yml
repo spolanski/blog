@@ -2,8 +2,8 @@
 title:               Numerical simulations blog
 tagline:             by slawomir polanski
 description:
-baseurl:            #"/blog"
-url:                #"https://spolanski.github.io"
+baseurl:             #"/blog"
+url:                 #"https://spolanski.github.io"
 github:
   url:               #"https://spolanski.github.io/blog"
 author:
