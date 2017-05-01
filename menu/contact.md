@@ -3,4 +3,4 @@ layout: page
 title: Contact
 ---
 
-If you are having any problems, any questions or suggestions, feel free to [tweet at me](https://twitter.com/intent/tweet?text=%40paululele), or [file a GitHub issue](https://github.com/lenpaul/lagrange/issues/new)
+If you are having any questions/suggestions or you would like to talk, feel free to write to me on [polanski.slawomir@gmail.com](polanski.slawomir@gmail.com). You can also find me on [LinkedIn](https://linkedin.com/in/slawomirpolanski) and [GitHub](https://github.com/spolanski).
