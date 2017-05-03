@@ -54,6 +54,11 @@ img {
   border-radius: 5px;
 }
 
+.center-image
+{
+  margin: 0 auto;
+  display: block;
+}
 /*
   Blockquote
 */
