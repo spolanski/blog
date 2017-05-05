@@ -9,4 +9,4 @@ Another aim of the website is to show people who have nothing in common with eng
 
 The last reason why I would like to write a blog is involved with the question about my profession. Usually, when someone is asking what do I do at work, I respond ‘I am an engineer’. For most of the people the answer is enough, but sometimes a person is nice and asks for more details. Then, the stream of words from my mouth does not make any sense for the person I talk to and the situation ends up like in the figure below...
 
-![about](https://spolanski.github.io/blog/images/about_page.jpg)
+![about]({{site.url}}/images/about_page.jpg)
