@@ -19,7 +19,7 @@ The simulation of skateboard is such a nice example of situation when hobby meet
 # Rectangular specimen experiment
 When I started to build the numerical model for thesis purposes, I knew that skateboard deck is a lamina made from Canadian Maple (usually 7-9 plies). The fact that it is a type of material I had not analyse before made my situation a bit problematic. For that reason, I decided to build a model of rectangular specimen at first to see how it behaves. Luckily, I found an old skateboard at home - that allows me to make an experiment on real piece of lamina. The photo was taken during the test performed in professional laboratory built from a home gym set :-) .
 
-![testing station]({{site.url}}/images/00_skateboard/testing_station.jpg){: .center-image }
+![testing station]({{site.url}}/blog/images/00_skateboard/testing_station.jpg){: .center-image }
 
 # Pressure test on skateboard
 # 'Real' drop test
