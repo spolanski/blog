@@ -21,7 +21,7 @@ When I started to build the numerical model for thesis purposes, I knew that ska
 
 {% capture imagesrc %}testing_station.jpg{% endcapture %}
 {% capture imagetitle %}Testing station{% endcapture %}
-<a href="/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
+<a href="{{site.url}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
 # Pressure test on skateboard
