@@ -27,3 +27,16 @@ markdown:            kramdown
 highlighter:         rouge
 permalink:           none
 plugins_dir:         _plugins
+
+picture:
+  source: "assets/images"
+  output: "assets/images/resize"
+  markup: "picture"
+  presets:
+    default:
+      ppi: [1, 1.2, 2.0]
+      source_medium:
+        media: "(min-width: 10em)"
+        width: "1024"
+      source_default:
+        width: "1024"

@@ -20,7 +20,7 @@ body {
 }
 
 h1{
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 h1 a {
@@ -129,7 +129,7 @@ blockquote p {
 .masthead {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   font-family: "Quattrocento Sans", sans-serif;
 }
 
@@ -138,13 +138,14 @@ blockquote p {
 }
 
 .masthead-title a {
-  font-size: 2rem;
+  font-size: 2.0rem;
   text-decoration: none;
   color: #505050;
 }
 
 .masthead-subtitle {
   color: #999;
+  font-size: 1.5rem;
 }
 
 /*
@@ -156,7 +157,7 @@ blockquote p {
 }
 
 .posts {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   padding: 0px;
   list-style: none;
 }
@@ -254,7 +255,7 @@ blockquote p {
 
 .menu-content a {
   color: #999;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding-right: 10px;
 }
 
@@ -264,7 +265,7 @@ blockquote p {
 
 .social-icons a {
   color: #999;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 30em) {
