@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+- 2.3.1
+install:
+- bundle install
+script: bundle exec jekyll build
+after_success:
+- bash deploy.sh
+env:
+  global:
+    secure: kTYODCXRWe80jmHnT5dKtMGGHH6QTklfXsm5pe6kJR9lKNdJBZR3VmVyQz+Jw505qmXQeHU/jAk6hglOnbXPBKsPDUpyVtAlwvJFTBz+eDYsaX6BbfIFPsuhHnWxinVotF6WRjmREVifab37IFET0wUieKHt/D2Q+k0FoXBhNKQFhfN4uFoOdY02Nec/aOso/FQtYl7XdC9CxrsEj3kH3YB2bcCqFA7m48Z/AFgWVQFdlAKDVbNGdvXzKypEHd5FHAEem9EinKm/BFGHYJ2vgebKvNGMjp6Mi3wzuzE68Cq+Sn5R+2kxV6UhqQFg64i86l9sF44y1SuWZ7KxzhjLudJelpbueNezH0mQ2AUQk+UoZCR9gQazuzE+yxCxiEJlhVImvXluKS399Ngvw0E1WhnyxqJyiRYquugStImHa8NfUP/BibxmA/PVJSMAiF9vXTlifcMwCe9eRPDowaRd4AkpU4QDiMZZxVPc+g3OPJVpceULSJyTkTefpyhy0VrlWkRTVDzjnoLp6dBVPxr/mejGmY18zRdNluteWPe+T0lPQp22vNuGh1V4/Jzp7oQwFy9oZYI4IObGHCPL9SEoortXpcbunoOT1RyegjCacBRTF12fZLKeVHJcNF9gQ8aIji+rK+QzSnXTekaiiKigPh3KsoQzNpBqPjU5Ao2lpn0=
