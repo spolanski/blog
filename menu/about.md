@@ -12,6 +12,6 @@ The last reason why I would like to write a blog is involved with the question a
 
 {% capture imagesrc %}About.jpg{% endcapture %}
 {% capture imagetitle %}About me{% endcapture %}
-<a href="{{site.url}}/blogTest/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
+<a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
