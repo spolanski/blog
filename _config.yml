@@ -29,8 +29,8 @@ permalink:           none
 plugins_dir:         _plugins
 
 picture:
-  source: "assets/images"
-  output: "assets/images/resize"
+  source: "/blogTest/assets/images"
+  output: "/blogTest/assets/images/resize"
   markup: "picture"
   presets:
     default:
