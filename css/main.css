@@ -166,7 +166,7 @@ blockquote p {
   display: block;
   margin-bottom: 1rem;
   color: #9a9a9a;
-  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-size:0.8rem;
 }
 
@@ -195,7 +195,7 @@ blockquote p {
 
 .pagination {
   overflow: hidden;
-  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   text-align: center;
 }
 
