@@ -2,10 +2,10 @@
 title:               Numerical simulations blog
 tagline:             by slawomir polanski
 description:
-baseurl:             /blog
+baseurl:             /blogTest
 url:                 https://spolanski.github.io
 github:
-  url:               https://spolanski.github.io/blog
+  url:               https://spolanski.github.io/blogTest
 author:
   name:              "Slawomir Polanski"
   email:             "polanski.slawomir@gmail.com"
