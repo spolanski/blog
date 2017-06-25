@@ -11,19 +11,9 @@ body {
   orphans: 1;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 30em) {
   body {
     font-size: 16px;
-    line-height: 1.5rem;
-  }
-  body h1 {
-    font-size: 2.0rem;
-  }
-}
-
-@media (max-width: 550px) {
-  body {
-    font-size: 14px;
     line-height: 1.5rem;
   }
   body h1 {
@@ -33,7 +23,7 @@ body {
 
 h1{
   /*font-size: 1.8rem;*/
-  font-size: 42px;
+  font-size: 36px;
   widows: 4;
   orphans: 4;
 }
@@ -121,27 +111,21 @@ blockquote p {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 800px;
+  width: 2000px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1366px) {
   .container {
-    width: 90vw;
-  }
-}
-
-@media (max-width: 550px) {
-  .container {
-    width: 95vw;
+    width: 45vw;
   }
 }
 
 
-/*@media (max-width: 48em) {
+@media (max-width: 48em) {
   .container {
     width: 75vw;
   }
-}*/
+}
 
 /*
   Masthead
@@ -152,12 +136,6 @@ blockquote p {
   padding-bottom: 0.5rem;
   margin-bottom: 2.5rem;
   font-family: "Quattrocento Sans", sans-serif;
-}
-
-@media (max-width: 850px) {
-  .masthead {
-    margin-bottom: 0.25rem;
-  }
 }
 
 .masthead a:hover {
@@ -176,25 +154,6 @@ blockquote p {
   /*font-size: 1.5rem;*/
   font-size: 20px;
 }
-
-@media (max-width: 850px) {
-  .masthead-title a {
-    font-size: 1.5rem;
-  }
-  .masthead-subtitle {
-    font-size: 1.0rem;
-  }
-}
-
-@media (max-width: 550px) {
-  .masthead-title a {
-    font-size: 1.5rem;
-  }
-  .masthead-subtitle {
-    font-size: 1.0rem;
-  }
-}
-
 
 /*
   Post
@@ -219,10 +178,10 @@ blockquote p {
   font-size: 13px;
 }
 
-/*@media (max-width: 850px) {
+@media (max-width: 30rem) {
   .posts h1 {
     font-size: 13px;
-  }*/
+  }
 }
 
 .related {
@@ -309,12 +268,6 @@ blockquote p {
   padding-right: 10px;
 }
 
-@media (max-width: 850px) {
-  .menu-content a {
-    font-size: 1.2rem;
-  }
-}
-
 .social-icons {
   float: right;
 }
@@ -325,10 +278,10 @@ blockquote p {
   font-size: 20px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 30em) {
   .social-icons {
-    float: right;
-    padding-top: -1.5rem;
+    float: left;
+    padding-top: 0.5rem;
   }
 }
 
