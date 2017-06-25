@@ -3,15 +3,16 @@
 */
 
 body {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
-  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
   color: #515151;/*#3A3A3A;/*rgba(0,0,0,.8);/*#666;*/
   line-height: 1.75rem;
+  text-align: justify;
 }
 
 @media (max-width: 30em) {
   body {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5rem;
   }
   body h1 {
@@ -20,7 +21,10 @@ body {
 }
 
 h1{
-  font-size: 1.8rem;
+  /*font-size: 1.8rem;*/
+  font-size: 42px;
+  widows: 4;
+  orphans: 4;
 }
 
 h1 a {
@@ -28,7 +32,7 @@ h1 a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   color: #333;
 }
 
@@ -106,7 +110,7 @@ blockquote p {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 900px;
+  width: 800px;
 }
 
 @media (max-width: 1366px) {
@@ -138,14 +142,16 @@ blockquote p {
 }
 
 .masthead-title a {
-  font-size: 2.0rem;
+  /*font-size: 2.0rem;*/
+  font-size: 26px;
   text-decoration: none;
   color: #505050;
 }
 
 .masthead-subtitle {
   color: #999;
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
+  font-size: 20px;
 }
 
 /*
@@ -166,13 +172,14 @@ blockquote p {
   display: block;
   margin-bottom: 1rem;
   color: #9a9a9a;
-  font-family: 'Quattrocento Sans', sans-serif;
-  font-size:0.8rem;
+  font-family: "Libre Franklin", sans-serif;
+  /*font-size:0.8rem;*/
+  font-size: 13px;
 }
 
 @media (max-width: 30rem) {
   .posts h1 {
-    font-size: 1.5rem;
+    font-size: 13px;
   }
 }
 
@@ -195,7 +202,7 @@ blockquote p {
 
 .pagination {
   overflow: hidden;
-  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   text-align: center;
 }
 
@@ -255,7 +262,8 @@ blockquote p {
 
 .menu-content a {
   color: #999;
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
+  font-size: 20px;
   padding-right: 10px;
 }
 
@@ -265,7 +273,8 @@ blockquote p {
 
 .social-icons a {
   color: #999;
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
+  font-size: 20px;
 }
 
 @media (max-width: 30em) {
