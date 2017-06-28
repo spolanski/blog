@@ -24,7 +24,7 @@ When I started to build the numerical model for thesis purposes, I knew that ska
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
-The main idea of the experiment was to check the displacement under the given loading. I performed the measurements using a ruler, so the obtained data were probably not as accurate as it should. However, the rough results were enough to know if my numerical model, which I was about to build, would be near to acceptable. 
+The main idea of the experiment was to check the displacement under the given loading. I performed the measurements using a ruler, so the obtained data were probably not as accurate as it should. However, the rough results were enough to know if my numerical model, which I was about to build, would be near to acceptable.
 Before I moved to model creation process, I had to find material properties which are crucial in Finite Element Analysis. At that stage, I found a very useful Wood Handbook with Canadian Maple material data (it can be found here https://www.fpl.fs.fed.us/documnts/fplgtr/fpl_gtr190.pdf). Using the data from this resource, I built a shell specimen in Abaqus and I applied the lamina material model to it. After that, I put appropriate restrains and loads to imitate real behaviour of the sample. The results from experiments are presented below.
 
 {% capture imagesrc %}00_skate/Result_F_U.png{% endcapture %}
@@ -50,7 +50,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-<div style='position:relative;padding-bottom:46%'><iframe src='https://gfycat.com/ifr/ApprehensiveSourAfghanhound' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/WigglyHardtofindBlackpanther' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
