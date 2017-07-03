@@ -12,13 +12,15 @@ image:
   creditlink:
 ---
 
-Skateboarding was one of my favourite sports when I was younger. It has changed my life so much that I even wrote a Bachelors Thesis about it. In this thesis, I tried to analyse what is happening with a skateboard deck when a skater lands on it. Looking back in time, I feel that picking this particular topic was a really good move. I was at the very beginning of the simulation learning curve and each tiny step towards my goal took ages. However, having practical experience in skateboarding helped me more than I would have imagined. First of all, I knew where the skateboard usually breaks so it was easier to understand the results. Secondly, I felt like I was contributing somehow to the development of skateboarding and that gave me a lot of satisfaction.
+In my life I had so many hobbies that it would be hard to count them. Skateboarding was definitely the one which I remember the most and it is still my favourite sport. It has fascinated me so much that I wrote my Bachelors Thesis about it. In this thesis, I did a computer simulation of a skater landing on a skateboard. That was especially interesting for me as I could have done an experiment on a skateboard without physically destroying it. 
 
-The simulation of skateboard is such a nice example of situation when hobby meets engineering that I decided to present it in my first blog. Unfortunately, I cannot use the model I built for Bachelors Thesis purposes as it was created in software that I currently don't have access to. I created new one in Abaqus Student version which is available free of charge to students, educators, and researchers for personal and educational use - I believe the educational blog fits well to these requirements.
+The disserartion was split into the three stages and the complexity of the model was increasing throughout them. In this blog, I will try to describe the process of model creation without getting into details. By details, I mean not providing any complicated equations, terms and all bunch of things which may scare a person who has no knowledge of simulations. 
 
-## Rectangular specimen experiment
+Before I moved further, I have to admit that for purpose of this article, I recreated the models in Abaqus Student version. The software is available free of charge to students, educators, and researchers for personal and educational use - I believe the educational blog fits well to these requirements.
 
-When I started to build the numerical model for thesis purposes, I knew that a skateboard deck is a lamina made from Canadian Maple (usually 7-9 plies). I was not in comfortable situation because I had not analysed that kind of material before. For that reason, I decided to build a very simple model which allowed me to understand a material behaviour. Luckily, I found at home an old skateboard - that gave me the opportunity to make physical tests on real piece of lamina. The photo was taken during the test performed in professional laboratory built from a home gym set :-) .
+## Simple specimen experiment
+
+Analysis of a skateboard is not an easy task due to its' complicated geometry and unusual material used to built the deck. Traditionally, manufacturers are using a composite material made from Canadian Maple layers, usually 7-9 plies. I decided to build a very simple plate model on computer to understand this composite behaviour. Luckily, at home I found an old skateboard from which I cut an analogue real sample. After that, I utilised it in a bending test performed in the professional laboratory built from a home gym set :-) .
 
 {% capture imagesrc %}00_skate/testing_station.jpg{% endcapture %}
 {% capture imagetitle %}Testing station{% endcapture %}
@@ -26,7 +28,7 @@ When I started to build the numerical model for thesis purposes, I knew that a s
 {: .center-image }
 
 The main idea of the physical tests was to find a relation between deck deflection and a value of mass used to weight the deck. In more engineering terms, I was trying to look for a displacement under given loading. I performed the measurements using a ruler, so the obtained data were probably far from being accurate. However, the rough results were enough to judge if my numerical model could be acceptable.
-Before I moved to model creation process, I had to find material properties which are crucial in Finite Element Analysis. At that stage, I found a very useful Wood Handbook with Canadian Maple material data (it can be found <a href="https://www.fpl.fs.fed.us/documnts/fplgtr/fpl_gtr190.pdf">here</a>). Using the data from this resource, I built a shell geometry in Abaqus and I applied the lamina material model to it. After that, I put appropriate restrains and loads to imitate the body behaviour from physical tests. The results from experiments are presented below.
+Before I moved to model creation process, I had to find material properties which are crucial in Finite Element Analysis. At that stage, I found a very useful Wood Handbook which presents Canadian Maple material data (it can be found <a href="https://www.fpl.fs.fed.us/documnts/fplgtr/fpl_gtr190.pdf">here</a>). Using the data from this resource, I built a shell geometry in Abaqus and I applied the lamina material model to it. After that, I put appropriate restrains and loads to imitate the body behaviour from physical tests. The results from experiments are presented below.
 
 {% capture imagesrc %}00_skate/Result_F_U.png{% endcapture %}
 {% capture imagetitle %}Abaqus results{% endcapture %}
@@ -39,10 +41,11 @@ Before I moved to model creation process, I had to find material properties whic
 {: .center-image }
 
 The colourful plots do not show any non-physical behaviour which is a good sign. Also, looking at the force-displacement graph it can be seen that the numerical model results are not far from physical tests. It indicates that both lamina material model and the material properties can be assumed as correct for further investigations.
+At this point, it is worth showing how easy is to get results for different material data. In case of physical tests, I would have to cut few different samples to use them in experiment. For the numerical simulation, it is only matter of changing few variables.
 
-## Pressure test on skateboard
+## Skateboard pressure test
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the skateboard under the static loading. That is also a stage when real geometry was introduced. When writing thesis I found some data from physical experiments which seems not to be available anymore (<a href="link">link</a>). Fortunately, I saved a laboratory test photo and the original results (<a href="link">here</a>).  
 
 {% capture imagesrc %}00_skate/LabTest_photo.jpg{% endcapture %}
 {% capture imagetitle %}Testing station{% endcapture %}
