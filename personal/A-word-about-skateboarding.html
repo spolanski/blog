@@ -91,11 +91,11 @@
 
 <p>The disserartion was split into the three stages and the complexity of the model was increasing throughout them. In this blog, I will try to describe the process of model creation without getting into details. By details, I mean not providing any complicated equations, terms and all bunch of things which may scare a person who has no knowledge of simulations.</p>
 
-<p>Before I moved further, I have to admit that for purpose of this article, I recreated the models in Abaqus Student version. The software is available free of charge to students, educators, and researchers for personal and educational use - I believe the educational blog fits well to these requirements.</p>
+<p>Before I move further, I have to admit that for purpose of this article I recreated the models in Abaqus Student version. The software is available free of charge to students, educators, and researchers for personal and educational use. I believe the educational blog fits well to these requirements.</p>
 
 <h2 id="simple-specimen-experiment">Simple specimen experiment</h2>
 
-<p>Analysis of a skateboard is not an easy task due to its’ complicated geometry and unusual material used to built the deck. Traditionally, manufacturers are using a composite material made from Canadian Maple layers, usually 7-9 plies. I decided to build a very simple plate model on computer to understand this composite behaviour. Luckily, at home I found an old skateboard from which I cut an analogue real sample. After that, I utilised it in a bending test performed in the professional laboratory built from a home gym set :-) .</p>
+<p>Analysis of a skateboard is not an easy task due to its’ complicated geometry and unusual material used to built the deck. Traditionally, manufacturers are using a composite material made from Canadian Maple layers, usually 7-9 plies. I decided to build a simple plate model on computer to understand this composite behaviour. Luckily, at home I found an old skateboard from which I cut an analogue real sample. After that, I utilised it in a bending test performed in the professional laboratory built from a home gym set :-) .</p>
 
 <p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/testing_station.jpg"><picture>
     <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/testing_station-1600by900-b8bdcd.jpg" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
@@ -138,7 +138,22 @@ At this point, it is worth showing how easy is to get results for different mate
 
 <h2 id="skateboard-pressure-test">Skateboard pressure test</h2>
 
-<p>Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the skateboard under the static loading. That is also a stage when real geometry was introduced. When writing thesis I found some data from physical experiments which seems not to be available anymore (<a href="link">link</a>). Fortunately, I saved a laboratory test photo and the original results (<a href="link">here</a>).</p>
+<p>Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the skateboard under the static loading. That is also a stage when the real geometry was introduced. I remember that it took me a while till I figured out how to model it. Luckily, since that time, the 3D scanning technology has evolved significantly. Thanks to that and (name of the guy) from GrabCAD, who scanned the skateboard, I can use it for the purpose of this blog.</p>
+
+<p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/Skateboard.jpg"><picture>
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1920by1040-654ba6.jpg" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1229by666-654ba6.jpg" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1024by555-654ba6.jpg" media="(min-width: 10em)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1920by1040-654ba6.jpg" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1229by666-654ba6.jpg" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1024by555-654ba6.jpg" />
+    <img src="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1024by555-654ba6.jpg" alt="Results comparison" title="Results comparison" />
+  </picture>
+</a></p>
+
+<div style="position:relative;padding-bottom:57%"><iframe src="https://gfycat.com/ifr/WigglyHardtofindBlackpanther" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen=""></iframe></div>
+
+<p>When writing the thesis, I found some data from physical experiments which seem not to be available anymore (<a href="link">link</a>). Fortunately, I saved a laboratory test photo and the original results (<a href="link">here</a>). The author performed strength tests of four decks, however he didn’t state what kind of skateboards he had used. As a result of that, I had to assumed that my composite structure is the same as his.</p>
 
 <p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/LabTest_photo.jpg"><picture>
     <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LabTest_photo-1600by1076-e28003.jpg" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
@@ -151,12 +166,6 @@ At this point, it is worth showing how easy is to get results for different mate
   </picture>
 </a></p>
 
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-<div style="position:relative;padding-bottom:57%"><iframe src="https://gfycat.com/ifr/WigglyHardtofindBlackpanther" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen=""></iframe></div>
-
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
 <p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/LaboratoryPlot.png"><picture>
     <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot-1600by717-9b5fc2.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
     <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot-1229by551-9b5fc2.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
@@ -168,7 +177,8 @@ At this point, it is worth showing how easy is to get results for different mate
   </picture>
 </a></p>
 
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p>Despite few assumptions made at the beginning of the simulation, it can be seen that results from the real and the numerical tests are pretty close for deck with 9 plies. It also shows how valuable for engineering composites can be. Small change in the structure has huge impact on the strength, but it has very little impact on weight of deck. 
+I went even further and checked what happens if I use an elastic-plastic material properties. In other words, I tried to use material model which should give more accurate results, but it is harder for software to obtain them. As presented below, the new material model fits better to real test.</p>
 
 <p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/LaboratoryPlot_plasticity.png"><picture>
     <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-1600by630-4b8717.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
@@ -182,18 +192,6 @@ At this point, it is worth showing how easy is to get results for different mate
 </a></p>
 
 <h2 id="real-drop-test">‘Real’ drop test</h2>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-<p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/Skateboard.jpg"><picture>
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1920by1040-654ba6.jpg" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1229by666-654ba6.jpg" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1024by555-654ba6.jpg" media="(min-width: 10em)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1920by1040-654ba6.jpg" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1229by666-654ba6.jpg" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1024by555-654ba6.jpg" />
-    <img src="https://spolanski.github.io/blog/assets/images/resize/00_skate/Skateboard-1024by555-654ba6.jpg" alt="Results comparison" title="Results comparison" />
-  </picture>
-</a></p>
 
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
