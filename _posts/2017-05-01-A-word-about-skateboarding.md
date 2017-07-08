@@ -16,11 +16,11 @@ In my life I had so many hobbies that it would be hard to count them. Skateboard
 
 The disserartion was split into the three stages and the complexity of the model was increasing throughout them. In this blog, I will try to describe the process of model creation without getting into details. By details, I mean not providing any complicated equations, terms and all bunch of things which may scare a person who has no knowledge of simulations. 
 
-Before I moved further, I have to admit that for purpose of this article, I recreated the models in Abaqus Student version. The software is available free of charge to students, educators, and researchers for personal and educational use - I believe the educational blog fits well to these requirements.
+Before I move further, I have to admit that for purpose of this article I recreated the models in Abaqus Student version. The software is available free of charge to students, educators, and researchers for personal and educational use. I believe the educational blog fits well to these requirements.
 
 ## Simple specimen experiment
 
-Analysis of a skateboard is not an easy task due to its' complicated geometry and unusual material used to built the deck. Traditionally, manufacturers are using a composite material made from Canadian Maple layers, usually 7-9 plies. I decided to build a very simple plate model on computer to understand this composite behaviour. Luckily, at home I found an old skateboard from which I cut an analogue real sample. After that, I utilised it in a bending test performed in the professional laboratory built from a home gym set :-) .
+Analysis of a skateboard is not an easy task due to its' complicated geometry and unusual material used to built the deck. Traditionally, manufacturers are using a composite material made from Canadian Maple layers, usually 7-9 plies. I decided to build a simple plate model on computer to understand this composite behaviour. Luckily, at home I found an old skateboard from which I cut an analogue real sample. After that, I utilised it in a bending test performed in the professional laboratory built from a home gym set :-) .
 
 {% capture imagesrc %}00_skate/testing_station.jpg{% endcapture %}
 {% capture imagetitle %}Testing station{% endcapture %}
@@ -45,25 +45,29 @@ At this point, it is worth showing how easy is to get results for different mate
 
 ## Skateboard pressure test
 
-Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the skateboard under the static loading. That is also a stage when real geometry was introduced. When writing thesis I found some data from physical experiments which seems not to be available anymore (<a href="link">link</a>). Fortunately, I saved a laboratory test photo and the original results (<a href="link">here</a>).  
+Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the skateboard under the static loading. That is also a stage when the real geometry was introduced. I remember that it took me a while till I figured out how to model it. Luckily, since that time, the 3D scanning technology has evolved significantly. Thanks to that and (name of the guy) from GrabCAD, who scanned the skateboard, I can use it for the purpose of this blog.
+
+{% capture imagesrc %}00_skate/Skateboard.jpg{% endcapture %}
+{% capture imagetitle %}Results comparison{% endcapture %}
+<a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
+{: .center-image }
+
+<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/WigglyHardtofindBlackpanther' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+
+When writing the thesis, I found some data from physical experiments which seem not to be available anymore (<a href="link">link</a>). Fortunately, I saved a laboratory test photo and the original results (<a href="link">here</a>). The author performed strength tests of four decks, however he didn't state what kind of skateboards he had used. As a result of that, I had to assumed that my composite structure is the same as his.
 
 {% capture imagesrc %}00_skate/LabTest_photo.jpg{% endcapture %}
 {% capture imagetitle %}Testing station{% endcapture %}
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/WigglyHardtofindBlackpanther' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
 {% capture imagesrc %}00_skate/LaboratoryPlot.png{% endcapture %}
 {% capture imagetitle %}Abaqus results{% endcapture %}
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Despite few assumptions made at the beginning of the simulation, it can be seen that results from the real and the numerical tests are pretty close for deck with 9 plies. It also shows how valuable for engineering composites can be. Small change in the structure has huge impact on the strength, but it has very little impact on weight of deck. 
+I went even further and checked what happens if I use an elastic-plastic material properties. In other words, I tried to use material model which should give more accurate results, but it is harder for software to obtain them. As presented below, the new material model fits better to real test. 
 
 {% capture imagesrc %}00_skate/LaboratoryPlot_plasticity.png{% endcapture %}
 {% capture imagetitle %}Results comparison{% endcapture %}
@@ -71,12 +75,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 {: .center-image }
 
 ## 'Real' drop test
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-{% capture imagesrc %}00_skate/Skateboard.jpg{% endcapture %}
-{% capture imagetitle %}Results comparison{% endcapture %}
-<a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
-{: .center-image }
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
