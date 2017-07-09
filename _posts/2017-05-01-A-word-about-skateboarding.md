@@ -22,7 +22,7 @@ Before I move further, I have to admit that for purpose of this article I recrea
 
 Analysis of a skateboard is not an easy task due to its' complicated geometry and unusual material used to built the deck. Traditionally, manufacturers are using a composite material made from Canadian Maple layers, usually 7-9 plies. I decided to build a simple plate model on computer to understand this composite behaviour. Luckily, at home I found an old skateboard from which I cut an analogue real sample. After that, I utilised it in a bending test performed in the professional laboratory built from a home gym set :-) .
 
-{% capture imagesrc %}00_skate/testing_station.jpg{% endcapture %}
+{% capture imagesrc %}00_skate/testing_station.png{% endcapture %}
 {% capture imagetitle %}Testing station{% endcapture %}
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
@@ -49,7 +49,7 @@ Another stage was to perform skateboard pressure test simulation. It allowed to 
 
 When writing the thesis, I found some data from physical experiments which seem not to be available any more. Fortunately, I saved a laboratory test photo and the original results (<a href="{{site.url}}{{site.baseurl}}/images/skate_graph.jpg">here</a>). The author performed strength tests of four decks, however he didn't state what kind of skateboards he had used. As a result of that, I had to assume that my composite structure is the same as his.
 
-{% capture imagesrc %}00_skate/LabTest_photo.jpg{% endcapture %}
+{% capture imagesrc %}00_skate/LabTest_photo.png{% endcapture %}
 {% capture imagetitle %}Real pressure test{% endcapture %}
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
