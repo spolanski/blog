@@ -12,9 +12,9 @@ image:
   creditlink:
 ---
 
-In my life I had so many hobbies that it would be hard to count them. Skateboarding was definitely the one which I remember the most and it is still my favourite sport. It has fascinated me so much that I wrote my Bachelors Thesis about it. In this thesis, I did a computer simulation of a skater landing on a skateboard. That was especially interesting for me as I could have done an experiment on a skateboard without physically destroying it. 
+In my life I had so many hobbies that it would be hard to count them. Skateboarding was definitely the one which I remember the most and it is still my favourite sport. It has fascinated me so much that I wrote my Bachelors Thesis about it. In this thesis, I did a computer simulation of a skater landing on a skateboard. That was especially interesting for me as I could have done an experiment on a skateboard without physically destroying it.
 
-The disserartion was split into the three stages and the complexity of the model was increasing throughout them. In this blog, I will try to describe the process of model creation without getting into details. By details, I mean not providing any complicated equations, terms and all bunch of things which may scare a person who has no knowledge of simulations. 
+The disserartion was split into the three stages and the complexity of the model was increasing throughout them. In this blog, I will try to describe the process of model creation without getting into details. By details, I mean not providing any complicated equations, terms and all bunch of things which may scare a person who has no knowledge of simulations.
 
 Before I move further, I have to admit that for purpose of this article I recreated the models in Abaqus Student version. The software is available free of charge to students, educators, and researchers for personal and educational use. I believe the educational blog fits well to these requirements.
 
@@ -45,16 +45,16 @@ At this point, it is worth showing how easy is to get results for different mate
 
 ## Skateboard pressure test
 
-Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the skateboard under the static loading. That is also a stage when the real geometry was introduced. I remember that it took me a while till I figured out how to model it. Luckily, since that time, the 3D scanning technology has evolved significantly. Thanks to that and (name of the guy) from GrabCAD, who scanned the skateboard, I can use it for the purpose of this blog.
+Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the skateboard under the static loading. That is also a stage when the real geometry was introduced. I remember that it took me a while till I figured out how to model it. Luckily, since that time, the 3D scanning technology has evolved significantly. Thanks to that and <a href="https://grabcad.com/neomek-1">Neomek</a> from GrabCAD, who scanned the skateboard, I can use it for the purpose of this article.
 
 {% capture imagesrc %}00_skate/Skateboard.jpg{% endcapture %}
-{% capture imagetitle %}Results comparison{% endcapture %}
+{% capture imagetitle %}3D scan of skateboard{% endcapture %}
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
 <div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/WigglyHardtofindBlackpanther' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
 
-When writing the thesis, I found some data from physical experiments which seem not to be available anymore (<a href="link">link</a>). Fortunately, I saved a laboratory test photo and the original results (<a href="link">here</a>). The author performed strength tests of four decks, however he didn't state what kind of skateboards he had used. As a result of that, I had to assumed that my composite structure is the same as his.
+When writing the thesis, I found some data from physical experiments which seem not to be available anymore (<a href="link">link</a>). Fortunately, I saved a laboratory test photo and the original results (<a href="{{site.url}}{{site.baseurl}}/images/skate_graph.jpg">here</a>). The author performed strength tests of four decks, however he didn't state what kind of skateboards he had used. As a result of that, I had to assumed that my composite structure is the same as his.
 
 {% capture imagesrc %}00_skate/LabTest_photo.jpg{% endcapture %}
 {% capture imagetitle %}Testing station{% endcapture %}
@@ -66,18 +66,29 @@ When writing the thesis, I found some data from physical experiments which seem 
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
-Despite few assumptions made at the beginning of the simulation, it can be seen that results from the real and the numerical tests are pretty close for deck with 9 plies. It also shows how valuable for engineering composites can be. Small change in the structure has huge impact on the strength, but it has very little impact on weight of deck. 
-I went even further and checked what happens if I use an elastic-plastic material properties. In other words, I tried to use material model which should give more accurate results, but it is harder for software to obtain them. As presented below, the new material model fits better to real test. 
+Despite few assumptions made at the beginning of the simulation, it can be seen that results from the real and the numerical tests are pretty close for deck with 9 plies. It also shows how valuable from engineering point of view the composites can be. Small change in the deck structure has huge impact on the strength property, while it has almost no impact on its' weight.
+I went even further and checked what happens if I use an elastic-plastic material properties. In other words, I tried to use material model which should give more accurate results, but it is more difficult for a software to perform the simulation. As presented below, the new material model fits better to the real test.
 
 {% capture imagesrc %}00_skate/LaboratoryPlot_plasticity.png{% endcapture %}
-{% capture imagetitle %}Results comparison{% endcapture %}
+{% capture imagetitle %}Results plot{% endcapture %}
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
-## 'Real' drop test
+## Computer landing simulation
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+The final stage was to create a simulation of a man landing on skateboard. For that purpose, I utilised all previous assumptions and a human geometry which I found on GrabCAD website.
 
-<div style='position:relative;padding-bottom:56%'><iframe src='https://gfycat.com/ifr/MiserlyHatefulIndianrockpython' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/WastefulKindheartedHypsilophodon' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+
+{% capture imagesrc %}00_skate/RF_Trucks.png{% endcapture %}
+{% capture imagetitle %}Reaction Force in Trucks{% endcapture %}
+<a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
+{: .center-image }
+
+<div style='position:relative;padding-bottom:47%'><iframe src='https://gfycat.com/ifr/PossibleIcyIzuthrush' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+
+## Conclusions
+
+
 
 
