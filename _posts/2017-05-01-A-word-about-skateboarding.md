@@ -45,21 +45,16 @@ At this point, it is worth showing how easy is to get results for different mate
 
 ## Skateboard pressure test
 
-Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the skateboard under the static loading. That is also a stage when the real geometry was introduced. I remember that it took me a while till I figured out how to model it. Luckily, since that time, the 3D scanning technology has evolved significantly. Thanks to that and <a href="https://grabcad.com/neomek-1">Neomek</a> from GrabCAD, who scanned the skateboard, I can use it for the purpose of this article.
+Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the deck under the static loading. That is also a stage when the real shape of skateboard was created. I remember, that it took me a while till I figured out how to model the geometry properly. Luckily, the 3D scanning technology has evolved significantly since release of my thesis and I don't have to worry about deck shape. In this blog I used a 3D scan done by <a href="https://grabcad.com/neomek-1">Neomek</a> from GrabCAD and I am very grateful for his job.
 
-{% capture imagesrc %}00_skate/Skateboard.jpg{% endcapture %}
-{% capture imagetitle %}3D scan of skateboard{% endcapture %}
+When writing the thesis, I found some data from physical experiments which seem not to be available any more. Fortunately, I saved a laboratory test photo and the original results (<a href="{{site.url}}{{site.baseurl}}/images/skate_graph.jpg">here</a>). The author performed strength tests of four decks, however he didn't state what kind of skateboards he had used. As a result of that, I had to assume that my composite structure is the same as his.
+
+{% capture imagesrc %}00_skate/LabTest_photo.jpg{% endcapture %}
+{% capture imagetitle %}Real pressure test{% endcapture %}
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
 <div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/WigglyHardtofindBlackpanther' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
-
-When writing the thesis, I found some data from physical experiments which seem not to be available anymore (<a href="link">link</a>). Fortunately, I saved a laboratory test photo and the original results (<a href="{{site.url}}{{site.baseurl}}/images/skate_graph.jpg">here</a>). The author performed strength tests of four decks, however he didn't state what kind of skateboards he had used. As a result of that, I had to assumed that my composite structure is the same as his.
-
-{% capture imagesrc %}00_skate/LabTest_photo.jpg{% endcapture %}
-{% capture imagetitle %}Testing station{% endcapture %}
-<a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
-{: .center-image }
 
 {% capture imagesrc %}00_skate/LaboratoryPlot.png{% endcapture %}
 {% capture imagetitle %}Abaqus results{% endcapture %}
@@ -67,6 +62,7 @@ When writing the thesis, I found some data from physical experiments which seem 
 {: .center-image }
 
 Despite few assumptions made at the beginning of the simulation, it can be seen that results from the real and the numerical tests are pretty close for deck with 9 plies. It also shows how valuable from engineering point of view the composites can be. Small change in the deck structure has huge impact on the strength property, while it has almost no impact on its' weight.
+
 I went even further and checked what happens if I use an elastic-plastic material properties. In other words, I tried to use material model which should give more accurate results, but it is more difficult for a software to perform the simulation. As presented below, the new material model fits better to the real test.
 
 {% capture imagesrc %}00_skate/LaboratoryPlot_plasticity.png{% endcapture %}
@@ -76,9 +72,11 @@ I went even further and checked what happens if I use an elastic-plastic materia
 
 ## Computer landing simulation
 
-The final stage was to create a simulation of a man landing on skateboard. For that purpose, I utilised all previous assumptions and a human geometry which I found on GrabCAD website.
+In the final stage, the human geometry was added to the model, so I could model the deck behaviour under dynamic loading. I assumed that skater (70 kg) jumps from the height of 1 meter and lands on the skateboard in the most destructive way.
 
 <div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/WastefulKindheartedHypsilophodon' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+
+For this particular loading case, I don't have any experimental data to check whether the numerical model is correct. However, I decided to compare the reaction forces from the static pressure test with the reaction force in trucks for this dynamic loading. If the deck is breaking for 3000-4000 N in static tests, then it should break also near that value in dynamic case. Looking at the plot below we can say that this is happening - huge changes in value appear just after 4000 N. It shows the moment when the skateboard starts to break.
 
 {% capture imagesrc %}00_skate/RF_Trucks.png{% endcapture %}
 {% capture imagetitle %}Reaction Force in Trucks{% endcapture %}

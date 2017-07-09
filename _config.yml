@@ -37,6 +37,6 @@ picture:
       ppi: [1, 1.2, 2.0]
       source_medium:
         media: "(min-width: 10em)"
-        width: "1024"
+        width: "800"
       source_default:
-        width: "1024"
+        width: "800"
