@@ -73,8 +73,9 @@ I went even further and checked what happens if I use an elastic-plastic materia
 ## Drop-test simulation
 
 In the final stage, the human geometry was added to the model, so I could model the deck behaviour under dynamic loading. I assumed that skater (70 kg) jumps from the height of 1 meter and lands on the skateboard in the most destructive way.
+The animation below presents where the skateboard is going to break. 
 
-<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/QuaintThoughtfulErin' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/QuaintThoughtfulErin' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></di>
 
 For this particular loading case, I don't have any experimental data to check whether the numerical model is correct. However, I can compare the obtained reaction forces with those from static pressure test. From the static simulation, I know that the deck should break under the loading of 3000-4000 N. Looking at the plot below, one can say that this is happening here. Just after 4000 N the Reaction Force value starts fluctuating. This is the moment when skateboard starts breaking.
 
@@ -83,12 +84,12 @@ For this particular loading case, I don't have any experimental data to check wh
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
-The last animation shows how much the skateboard is going to be moved from initial position when the skater lands on it
+The last animation shows how much the skateboard is going to be bended when the skater lands on it.
 
 <div style='position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/ConcretePrestigiousKilldeer' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>
 
 ## Conclusions
-
+I tried to be precise in this first post, but I wasn't able to make it shorter than that. When reading it I feel like I am still hiding some information from the reader. I think it might be better for non-engineers to be introduced gently though. That is why, if you feel you want to know more put a comment or just contact with me!
 
 
 
