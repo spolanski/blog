@@ -70,18 +70,20 @@ I went even further and checked what happens if I use an elastic-plastic materia
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
-## Computer landing simulation
+## Drop-test simulation
 
 In the final stage, the human geometry was added to the model, so I could model the deck behaviour under dynamic loading. I assumed that skater (70 kg) jumps from the height of 1 meter and lands on the skateboard in the most destructive way.
 
 <div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/QuaintThoughtfulErin' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
 
-For this particular loading case, I don't have any experimental data to check whether the numerical model is correct. However, I decided to compare the reaction forces from the static pressure test with the reaction force in trucks for this dynamic loading. If the deck is breaking for 3000-4000 N in static tests, then it should break also near that value in dynamic case. Looking at the plot below we can say that this is happening - huge changes in value appear just after 4000 N. It shows the moment when the skateboard starts to break.
+For this particular loading case, I don't have any experimental data to check whether the numerical model is correct. However, I can compare the obtained reaction forces with those from static pressure test. From the static simulation, I know that the deck should break under the loading of 3000-4000 N. Looking at the plot below, one can say that this is happening here. Just after 4000 N the Reaction Force value starts fluctuating. This is the moment when skateboard starts breaking.
 
 {% capture imagesrc %}00_skate/RF_Trucks.png{% endcapture %}
 {% capture imagetitle %}Reaction Force in Trucks{% endcapture %}
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
+
+The last animation shows how much the skateboard is going to be moved from initial position when the skater lands on it
 
 <div style='position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/ConcretePrestigiousKilldeer' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>
 
