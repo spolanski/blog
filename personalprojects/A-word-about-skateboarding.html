@@ -89,9 +89,9 @@
 
 <p>In my life I had so many hobbies that it would be hard to count them. Skateboarding was definitely the one which I remember the most and it is still my favourite sport. It has fascinated me so much that I wrote my Bachelors Thesis about it. In this thesis, I did a computer simulation of a skater landing on a skateboard. That was especially interesting for me as I could have done an experiment on a skateboard without physically destroying it.</p>
 
-<p>The disserartion was split into the three stages and the complexity of the model was increasing throughout them. In this blog, I will try to describe the process of model creation without getting into details. By details, I mean not providing any complicated equations, terms and all bunch of things which may scare a person who has no knowledge of simulations.</p>
+<p>The dissertation was split into the three stages and the complexity of the model was increasing throughout them. In this blog, I will try to describe the process of model creation without getting into details. By details, I mean not providing any complicated equations, terms and all bunch of things which may scare a person who has no knowledge of simulations.</p>
 
-<p>Before I move further, I have to admit that for purpose of this article I recreated the models in Abaqus Student version. The software is available free of charge to students, educators, and researchers for personal and educational use. I believe the educational blog fits well to these requirements.</p>
+<p>For the purpose of this article, I used Abaqus Student version which is available free of charge to students, educators, and researchers for personal and educational use. I believe the educational blog fits well to these requirements.</p>
 
 <h2 id="simple-specimen-experiment">Simple specimen experiment</h2>
 
@@ -108,8 +108,8 @@
   </picture>
 </a></p>
 
-<p>The main idea of the physical tests was to find a relation between deck deflection and a value of mass used to weight the deck. In more engineering terms, I was trying to look for a displacement under given loading. I performed the measurements using a ruler, so the obtained data were probably far from being accurate. However, the rough results were enough to judge if my numerical model could be acceptable.
-Before I moved to model creation process, I had to find material properties which are crucial in Finite Element Analysis. At that stage, I found a very useful Wood Handbook which presents Canadian Maple material data (it can be found <a href="https://www.fpl.fs.fed.us/documnts/fplgtr/fpl_gtr190.pdf">here</a>). Using the data from this resource, I built a shell geometry in Abaqus and I applied the lamina material model to it. After that, I put appropriate restrains and loads to imitate the body behaviour from physical tests. The results from experiments are presented below.</p>
+<p>The main idea of the physical tests was to find a relation between deck deflection and a value of mass used to weight the deck. In more engineering terms, I was trying to look for a displacement under given loading. The measurements were performed by a ruler, so the obtained data were probably far from being accurate. However, the rough results were enough to judge if my numerical model could be acceptable.
+Before I moved to model creation process, I had to find material properties which are crucial in Finite Element Analysis. At that stage, I found a very useful Wood Handbook which presents Canadian Maple material data (it can be found <a href="https://www.fpl.fs.fed.us/documnts/fplgtr/fpl_gtr190.pdf">here</a>). Using the data from this resource, I built a shell geometry in Abaqus and applied the lamina material model to it. After that, I put appropriate restrains and loads to imitate the body behaviour from physical tests. The results from experiments are presented below.</p>
 
 <p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/Result_F_U.png"><picture>
     <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/Result_F_U-1335by735-b79e16.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
@@ -138,7 +138,7 @@ At this point, it is worth showing how easy is to get results for different mate
 
 <h2 id="skateboard-pressure-test">Skateboard pressure test</h2>
 
-<p>Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the deck under the static loading. That is also a stage when the real shape of skateboard was created. I remember, that it took me a while till I figured out how to model the geometry properly. Luckily, the 3D scanning technology has evolved significantly since release of my thesis and I don’t have to worry about deck shape. In this blog I used a 3D scan done by <a href="https://grabcad.com/neomek-1">Neomek</a> from GrabCAD and I am very grateful for his job.</p>
+<p>Another stage was to perform skateboard pressure test simulation. It allowed to check the strength of the deck under the static loading. That is also a stage when the real shape of skateboard was created. I remember, that it took me a while till I figured out how to model the geometry properly. Luckily, in this blog I used a 3D scan done by <a href="https://grabcad.com/neomek-1">Neomek</a> from GrabCAD and I am very grateful for his job.</p>
 
 <p>When writing the thesis, I found some data from physical experiments which seem not to be available any more. Fortunately, I saved a laboratory test photo and the original results (<a href="https://spolanski.github.io/blog/images/skate_graph.jpg">here</a>). The author performed strength tests of four decks, however he didn’t state what kind of skateboards he had used. As a result of that, I had to assume that my composite structure is the same as his.</p>
 
@@ -153,7 +153,7 @@ At this point, it is worth showing how easy is to get results for different mate
   </picture>
 </a></p>
 
-<div style="position:relative;padding-bottom:54%"><iframe src="https://gfycat.com/ifr/HalfHilariousAmericancrocodile" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0" allowfullscreen=""></iframe></div>
+<div style="position:relative;padding-bottom:54%"><iframe src="https://gfycat.com/ifr/PlumpSlimyCrocodile" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0" allowfullscreen=""></iframe></div>
 
 <p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/LaboratoryPlot.png"><picture>
     <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot-1600by717-9b5fc2.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
@@ -171,13 +171,13 @@ At this point, it is worth showing how easy is to get results for different mate
 <p>I went even further and checked what happens if I use an elastic-plastic material properties. In other words, I tried to use material model which should give more accurate results, but it is more difficult for a software to perform the simulation. As presented below, the new material model fits better to the real test.</p>
 
 <p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/LaboratoryPlot_plasticity.png"><picture>
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-1600by630-4b8717.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-960by378-4b8717.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-800by315-4b8717.png" media="(min-width: 10em)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-1600by630-4b8717.png" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-960by378-4b8717.png" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-800by315-4b8717.png" />
-    <img src="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-800by315-4b8717.png" alt="Results plot" title="Results plot" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-1600by676-7f5a46.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-960by406-7f5a46.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-800by338-7f5a46.png" media="(min-width: 10em)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-1600by676-7f5a46.png" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-960by406-7f5a46.png" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-800by338-7f5a46.png" />
+    <img src="https://spolanski.github.io/blog/assets/images/resize/00_skate/LaboratoryPlot_plasticity-800by338-7f5a46.png" alt="Results plot" title="Results plot" />
   </picture>
 </a></p>
 
@@ -186,53 +186,56 @@ At this point, it is worth showing how easy is to get results for different mate
 <p>In the final stage, the human geometry was added to the model, so I could model the deck behaviour under dynamic loading. I assumed that skater (70 kg) jumps from the height of 1 meter and lands on the skateboard in the most destructive way.
 The animation below presents where the skateboard is going to break.</p>
 
-<div style="position:relative;padding-bottom:57%"><iframe src="https://gfycat.com/ifr/QuaintThoughtfulErin" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen=""></iframe>&lt;/di&gt;
+<div style="position:relative;padding-bottom:54%"><iframe src="https://gfycat.com/ifr/HeftyRightAustraliancattledog" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0" allowfullscreen=""></iframe></div>
 
-For this particular loading case, I don't have any experimental data to check whether the numerical model is correct. However, I can compare the obtained reaction forces with those from static pressure test. From the static simulation, I know that the deck should break under the loading of 3000-4000 N. Looking at the plot below, one can say that this is happening here. Just after 4000 N the Reaction Force value starts fluctuating. This is the moment when skateboard starts breaking.
-
-
-
-<a href="https://spolanski.github.io/blog/assets/images/00_skate/RF_Trucks.png"><picture>
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-1411by800-f9f361.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-960by544-f9f361.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-800by454-f9f361.png" media="(min-width: 10em)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-1411by800-f9f361.png" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-960by544-f9f361.png" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
-    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-800by454-f9f361.png" />
-    <img src="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-800by454-f9f361.png" alt="Reaction Force in Trucks" title="Reaction Force in Trucks" />
+<p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/DropTest_feet.png"><picture>
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/DropTest_feet-1600by775-9fa26c.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/DropTest_feet-960by465-9fa26c.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/DropTest_feet-800by388-9fa26c.png" media="(min-width: 10em)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/DropTest_feet-1600by775-9fa26c.png" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/DropTest_feet-960by465-9fa26c.png" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/DropTest_feet-800by388-9fa26c.png" />
+    <img src="https://spolanski.github.io/blog/assets/images/resize/00_skate/DropTest_feet-800by388-9fa26c.png" alt="Movement of skater feet" title="Movement of skater feet" />
   </picture>
-</a>
-{: .center-image }
+</a></p>
 
-The last animation shows how much the skateboard is going to be bended when the skater lands on it.
+<p>For this particular loading case, I don’t have any experimental data to check whether the numerical model is correct. However, I can compare the obtained reaction forces with those from static pressure test. From the static simulation, I know that the deck should break under the loading of 3000-4000 N. Looking at the plot below, one can say that this is happening here. Just after 4000 N the Reaction Force value starts fluctuating. This is the moment when skateboard starts breaking.</p>
 
-<div style="position:relative;padding-bottom:54%"><iframe src="https://gfycat.com/ifr/ConcretePrestigiousKilldeer" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0" allowfullscreen=""></iframe></div>
+<p class="center-image"><a href="https://spolanski.github.io/blog/assets/images/00_skate/RF_Trucks.png"><picture>
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-1600by820-5459f6.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-960by492-5459f6.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-800by410-5459f6.png" media="(min-width: 10em)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-1600by820-5459f6.png" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-960by492-5459f6.png" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-800by410-5459f6.png" />
+    <img src="https://spolanski.github.io/blog/assets/images/resize/00_skate/RF_Trucks-800by410-5459f6.png" alt="Reaction Force in Trucks" title="Reaction Force in Trucks" />
+  </picture>
+</a></p>
 
-## Conclusions
+<!-- The last animation shows how much the skateboard is going to be bended when the skater lands on it.
 
-I tried to be precise in this first post, but I wasn't able to make it shorter than that. When reading it I feel like I am still hiding some information from the reader. I think it might be better for non-engineers to be introduced gently though. That is why, if you feel you want to know more put a comment or just contact with me!
+<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/QuaintThoughtfulErin' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div> -->
 
+<h2 id="conclusions">Conclusions</h2>
 
+<p>I tried to be precise in this first post, but I wasn’t able to make it shorter than that. When reading it I feel like I am still hiding some information from the reader. I think it might be better for non-engineers to be introduced gently though. That is why, if you feel you want to know more put a comment or just contact with me!</p>
 
-
-</div>
 
 
 <span class="post-date">
   Written on
   
-  May
-  1st
-    ,
+  July
+  15th,
   2017
   by Slawomir Polanski
 </span>
 <div class="post-date">Feel free to share!</div>
   <div class="sharing-icons">
-    <a href="https://twitter.com/intent/tweet?text=A word about skateboarding&amp;url=https://spolanski.github.io/blog/personal/A-word-about-skateboarding.html&amp;via=" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://spolanski.github.io/blog/personal/A-word-about-skateboarding.html&amp;title=A word about skateboarding" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-    <a href="https://plus.google.com/share?url=https://spolanski.github.io/blog/personal/A-word-about-skateboarding.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://spolanski.github.io/blog/personal/A-word-about-skateboarding.html&title=A word about skateboarding&summary=...&source=https://spolanski.github.io/blog" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+    <a href="https://twitter.com/intent/tweet?text=A word about skateboarding&amp;url=https://spolanski.github.io/blog/personalprojects/A-word-about-skateboarding.html&amp;via=" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://spolanski.github.io/blog/personalprojects/A-word-about-skateboarding.html&amp;title=A word about skateboarding" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=https://spolanski.github.io/blog/personalprojects/A-word-about-skateboarding.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://spolanski.github.io/blog/personalprojects/A-word-about-skateboarding.html&title=A word about skateboarding&summary=...&source=https://spolanski.github.io/blog" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 
   </div>
 </div>
