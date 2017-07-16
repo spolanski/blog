@@ -81,7 +81,7 @@ The animation below presents where the skateboard is going to break.
 <a href="{{site.url}}{{site.baseurl}}/assets/images/{{ imagesrc }}">{% picture post_landscape {{ imagesrc }} alt="{{ imagetitle }}" title="{{ imagetitle }}" %}</a>
 {: .center-image }
 
-For this particular loading case, I don't have any experimental data to check whether the numerical model is correct. However, I can compare the obtained reaction forces with those from static pressure test. From the static simulation, I know that the deck should break under the loading of 3000-4000 N. Looking at the plot below, one can say that this is happening here. Just after 4000 N the Reaction Force value starts fluctuating. This is the moment when skateboard starts breaking.
+For this particular loading case, I don't have any experimental data to check whether the numerical model is correct. However, I can compare the obtained reaction forces with values from the static pressure test. From the static simulation, I know that the deck should break under the loading of 3000-4000 N. Looking at the plot below, one can say that this is happening here. Just after 4000 N the Reaction Force value starts fluctuating. This is the moment when skateboard starts breaking.
 
 {% capture imagesrc %}00_skate/RF_Trucks.png{% endcapture %}
 {% capture imagetitle %}Reaction Force in Trucks{% endcapture %}
