@@ -75,8 +75,8 @@ In the final stage, the human geometry was added to the model, so I could model 
 The animation below presents where the skateboard is going to break.
 
 <div style='position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/HeftyRightAustraliancattledog' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>
-
-<div style='position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/RectangularAlienatedHoneybadger' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>
+<p></p>
+<div style='position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/MeaslyRespectfulGoitered' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>
 
 {% capture imagesrc %}00_skate/DropTest_feet.png{% endcapture %}
 {% capture imagetitle %}Movement of skater feet{% endcapture %}
