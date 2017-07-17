@@ -27,7 +27,7 @@ body {
     line-height: 1.5rem;
   }
   body h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -191,7 +191,8 @@ blockquote p {
     font-size: 1.5rem;
   }
   .masthead-subtitle {
-    font-size: 1.0rem;
+    /*font-size: 1.0rem;*/
+    display: none;
   }
 }
 
@@ -312,11 +313,13 @@ blockquote p {
 @media (max-width: 850px) {
   .menu-content a {
     font-size: 1.2rem;
+    display:inline-block;
   }
 }
 
 .social-icons {
   float: right;
+  display:inline-block;
 }
 
 .social-icons a {
@@ -326,9 +329,13 @@ blockquote p {
 }
 
 @media (max-width: 550px) {
+  .menu-content a {
+    font-size: 1.0rem;
+  }
   .social-icons {
-    float: right;
-    padding-top: -1.5rem;
+    display: none;
+    /*float: right;*/
+    /*padding-top: -10.2rem;*/
   }
 }
 
