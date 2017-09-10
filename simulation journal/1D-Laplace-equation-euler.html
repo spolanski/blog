@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>
+    
+      1D Laplace equation - the Euler method | Numerical simulations blog
+    
+  </title>
+
+  <script src="https://spolanski.github.io/blog/assets/picturefill.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://spolanski.github.io/blog/css/main.css">
+  <link rel="stylesheet" href="https://spolanski.github.io/blog/css/syntax.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101791561-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <link rel="icon" href="https://spolanski.github.io/blog/images/favicon.png">
+<!--   <script type"text/javascript" src="https://assets.gfycat.com/gfycat.js"></script> -->
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="https://spolanski.github.io/blog/">Numerical simulations blog</a>
+    <small class="masthead-subtitle">by Slawomir Polanski</small>
+    <div class="menu">
+  <div class="menu-content">
+    <a class="element Home " href="https://spolanski.github.io/blog/index">Home</a>
+    
+    <a class="element first  " href="https://spolanski.github.io/blog/menu/about">About</a>
+    
+    <a class="element   " href="https://spolanski.github.io/blog/menu/categories">Categories</a>
+    
+    <a class="element   last" href="https://spolanski.github.io/blog/menu/contact">Contact</a>
+    
+  </div>
+  <div class="social-icons">
+    
+      <a href="https://github.com/spolanski"><i class="fa fa-github" aria-hidden="true" target="_blank"></i></a>
+    
+    
+    
+    
+      <a href="https://linkedin.com/in/slawomirpolanski"><i class="fa fa-linkedin" aria-hidden="true" target="_blank"></i></a>
+    
+    
+      <a href="mailto:polanski.slawomir@gmail.com"><i class="fa fa-envelope" aria-hidden="true" target="_blank"></i></a>
+    
+  </div>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  1D Laplace equation - the Euler method
+</h1>
+
+
+
+
+  <img src="https://spolanski.github.io/blog/images/match.jpg">
+
+
+<p>The previous post stated on how to solve the heat transfer equation analytically. I could have solved it because the equation form is really simple. For most of the physical problems, it is impossible to find the exact solution of differential equations so scientists have developed numerical methods to get some approximation of what we could obtain analytically. In this blog, I am about to show one of these methods and it is going to be the Euler’s method.</p>
+
+<p>At first, let’s recall the heat transfer problem:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+  \nabla^2 = 0  \Longleftrightarrow  \frac{\partial^2 f(x)}{\partial x^2} = 0 \\
+  x \epsilon [0,1] \quad T(0)=30 \quad T(1)=20
+\end{align}</script>
+
+<title>MathJax TeX Test Page</title>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+<script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<h3 id="the-euler-method">The Euler method</h3>
+
+<p>Using the definition of function derivative, one can formulate the method as follows:</p>
+
+<script type="math/tex; mode=display">f'(x) = \lim_{h\to0} \frac{f(x+h) - f(x)}{h} \\[1.2em]
+  f'(x) \approx \frac{f(x+h) - f(x)}{h} \Rightarrow f(x+h) = f(x) + hf'(x) \\[1.2em]
+
+  y_{n+1} = y_n + hf(x_n, y_n)</script>
+
+<p>Unfortunately, the specified problem of heat equation is kind of special as it is Double Boundary Value Problem (the two values of temperature are known on the boundaries). To solve it by Euler’s method we need to know a temperature and a derivative of the temperature on one of the boundaries. As I don’t know the derivative, I am going to guess a value and then based on the result check whether it’s correct.</p>
+
+<p>Let’s reformulate the problem to be:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+      \left\{ \begin{array}{l}
+                \frac{dT(x)}{dx} = z\\
+                \frac{d^{2}T(x)}{dx^{2}} = \frac{dz}{dx} = 0
+              \end{array} \right.
+\end{align}</script>
+
+<p>In discrete notation it is going to be:</p>
+
+<script type="math/tex; mode=display">\left\{ \begin{array}{l}
+          T_{n+1} = T_n + hz_n\\
+          z_{n+1} = z_n + hz'_n
+        \end{array} \right.</script>
+
+<p>The discrete value of function $T(x)$ is presented below for two datasets:</p>
+<ul>
+  <li>Dataset 1: $T(0) = 0$ and $z(0) = 3$</li>
+  <li>Dataset 2: $T(0) = 0$ and $z(0) = -2$</li>
+</ul>
+
+<p class="center-img"><a href="https://spolanski.github.io/blog/assets/images/02_lapl_euler/Temperature_euler.png"><picture>
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler-600by483-527f85.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler-600by483-527f85.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler-600by483-527f85.png" media="(min-width: 10em)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler-600by483-527f85.png" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler-600by483-527f85.png" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler-600by483-527f85.png" />
+    <img src="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler-600by483-527f85.png" alt="Temperature distribution" title="Temperature distribution" />
+  </picture>
+</a></p>
+
+<p>One can see that the values for the second dataset are getting lower through the wall thickness and it is more suitable for our example. Now, we can take another shoot and try to hit $T(1)=15$, but it is better to take advantage of following formula:</p>
+
+<script type="math/tex; mode=display">\begin{align}
+  z_{exact} = z_{1} + \dfrac{z_{2} - z_{1}}{(T_{2}(1) - T_{1}(1))(T(1) - T_{1}(1)} \\
+            = 3 + \dfrac{-2 + 3}{(-2 - 3)(15 - 3)} = -15
+\end{align}</script>
+
+<p>Knowing that $T(0) = 0$ and $\frac{dT(x)}{dx} = -15$ we can obtain the final solution.</p>
+
+<p class="center-img"><a href="https://spolanski.github.io/blog/assets/images/02_lapl_euler/Temperature_euler_fin.png"><picture>
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler_fin-700by467-3dfd8b.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 2.0), (min-width: 10em) and (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler_fin-700by467-3dfd8b.png" media="(min-width: 10em) and (-webkit-min-device-pixel-ratio: 1.2), (min-width: 10em) and (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler_fin-700by467-3dfd8b.png" media="(min-width: 10em)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler_fin-700by467-3dfd8b.png" media="(-webkit-min-device-pixel-ratio: 2.0), (min-resolution: 192dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler_fin-700by467-3dfd8b.png" media="(-webkit-min-device-pixel-ratio: 1.2), (min-resolution: 115dpi)" />
+    <source srcset="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler_fin-600by400-3dfd8b.png" />
+    <img src="https://spolanski.github.io/blog/assets/images/resize/02_lapl_euler/Temperature_euler_fin-600by400-3dfd8b.png" alt="Temperature distribution" title="Temperature distribution" />
+  </picture>
+</a></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>This time, the method used for obtaining a solution seems to take more time than analytical way. In the next post I will present how to solve 1D Poisson’s equation and this will prove how handy the numerical methods are. For those who might be interested, I am attaching also the Python code which I used to get results.</p>
+
+<p>SP</p>
+
+<script src="https://gist.github.com/spolanski/856ad908612679c5a2587253c1c3791d.js"></script>
+
+
+
+<span class="post-date">
+  Written on
+  
+  September
+  7th,
+  2017
+  by Slawomir Polanski
+</span>
+<div class="post-date">Feel free to share!</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=1D Laplace equation - the Euler method&amp;url=https://spolanski.github.io/blog/simulation%20journal/1D-Laplace-equation-euler.html&amp;via=" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://spolanski.github.io/blog/simulation%20journal/1D-Laplace-equation-euler.html&amp;title=1D Laplace equation - the Euler method" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=https://spolanski.github.io/blog/simulation%20journal/1D-Laplace-equation-euler.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://spolanski.github.io/blog/simulation%20journal/1D-Laplace-equation-euler.html&title=1D Laplace equation - the Euler method&summary=...&source=https://spolanski.github.io/blog" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+  </div>
+</div>
+
+
+
+  <div id="disqus_thread"></div>
+  <script>
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://spolanskiblog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+    <a href="https://github.com/spolanski"><i class="fa fa-github" aria-hidden="true" target="_blank"></i></a>
+  
+  
+  
+  
+    <a href="https://linkedin.com/in/slawomirpolanski"><i class="fa fa-linkedin" aria-hidden="true" target="_blank"></i></a>
+  
+  
+    <a href="mailto:polanski.slawomir@gmail.com"><i class="fa fa-envelope" aria-hidden="true" target="_blank"></i></a>
+  
+  <div class="post-date"><a href="https://spolanski.github.io/blog/menu/about.html">Numerical simulations blog | Slawomir Polanski</a></div>
+</footer>
+
+
+  </div>
+
+</body>
+</html>
