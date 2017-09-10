@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Math and Code Formatting"
-categories: journal
+categories: [journal as]
 tags: [documentation,sample]
 image:
   feature: sewing.jpg
@@ -93,7 +93,7 @@ $$
 \end{align*}
 $$
 
-## Code Highlighting
+### Code Highlighting
 
 You can find the full list of supported programming languages [here](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers).
 

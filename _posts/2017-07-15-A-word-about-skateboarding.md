@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A word about skateboarding"
-categories: PersonalProjects
+categories: [Personal Projects]
 tags: [FEA, simulation]
 comments: true
 image:

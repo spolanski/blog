@@ -19,8 +19,7 @@ navigation:
 - title: Contact
   url: /contact
 
-paginate:            1
-# disqus:              disqus_BO4VASjAb2#"your-disqus"
+paginate:            3
 
 # Build settings
 markdown:            kramdown
@@ -39,4 +38,4 @@ picture:
         media: "(min-width: 10em)"
         width: "800"
       source_default:
-        width: "800"
+        width: "600"

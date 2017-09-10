@@ -69,7 +69,6 @@ module Jekyll
                   else
                     {}
                   end
-
       if instance['attr']
         html_attr = instance.delete('attr').merge(html_attr)
       end
@@ -101,6 +100,7 @@ module Jekyll
 
       # Store keys in an array for ordering the instance sources
       source_keys = instance.keys
+
       # used to escape markdown parsing rendering below
       markdown_escape = "\ "
 
