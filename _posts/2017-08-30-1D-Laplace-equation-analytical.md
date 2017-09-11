@@ -67,7 +67,7 @@ $$
           30 = C_1 \cdot 0 + C_2 \Rightarrow C_2 = 30\\
           15 = C_1 \cdot 1 + C_2 \Rightarrow C_1 = -15
         \end{array} \right. \\[1.2em]
-        T(x) = -10x + 30
+        T(x) = -15x + 30
 $$
 
 Using the obtained function $T(x)$, we can plot following graph.
