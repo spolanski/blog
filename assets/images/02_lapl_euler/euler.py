@@ -6,7 +6,6 @@ Created on Sun Sep 03 19:11:24 2017
 """
 import numpy as np
 import matplotlib.pyplot as plt
-import sympy as sp
 
 def euler(T_0, z_0, h):
     T_x = T_0 + h*z_0
