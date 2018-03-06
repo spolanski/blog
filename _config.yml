@@ -11,6 +11,8 @@ author:
   email:             "polanski.slawomir@gmail.com"
   github:            "spolanski"
   linkedin:          "slawomirpolanski"
+  twitter:           "_spolanski_"
+  instagram:         "polanski.slawomir"
 navigation:
 - title: About
   url: /about
@@ -19,7 +21,7 @@ navigation:
 - title: Contact
   url: /contact
 
-paginate:            3
+paginate:            4
 
 # Build settings
 markdown:            kramdown
