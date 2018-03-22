@@ -58,8 +58,16 @@ a {
     transition: .5s;
 }
 
+p a {
+  color: red;
+}
+
+li a {
+  color: red;
+}
+
 a:hover {
-  color: black;/*#999;*/
+  color: #999;
   border-bottom: none;
 }
 
