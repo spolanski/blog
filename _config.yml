@@ -21,7 +21,7 @@ navigation:
 - title: Contact
   url: /contact
 
-paginate:            4
+paginate:            5
 
 # Build settings
 markdown:            kramdown
