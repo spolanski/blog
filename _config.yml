@@ -14,12 +14,11 @@ author:
   twitter:           "_spolanski_"
   instagram:         "polanski.slawomir"
 navigation:
-- title: About
-  url: /about
+
 - title: Categories
   url: /categories
-- title: Contact
-  url: /contact
+- title: About me
+  url: /about
 
 paginate:            5
 

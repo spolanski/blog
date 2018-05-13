@@ -11,10 +11,19 @@ title: Home
   {% if post.image.teaser %}
     <a href="{{ site.github.url }}{{ post.url }}"><img src="{{ site.github.url }}/images/{{ post.image.teaser }}"></a>
   {% endif %}
-  <p>
-    {{ post.content | strip_html | truncate: 200 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
-    <span class="post-date" style="margin-top:3px"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
-  </p>
+  {% assign name = post.title %}
+  {% assign simweek = "SimWeek" %}
+  {% if name contains simweek %}
+    <p>
+      <span class="post-date" style="margin-top:3px"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
+    </p>
+  {% else %}
+    <p>
+      {{ post.content | strip_html | truncate: 300 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
+      <span class="post-date" style="margin-top:3px"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
+    </p>
+  {% endif %}
+
 </div>
 {% endfor %}
 

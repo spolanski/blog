@@ -58,7 +58,7 @@ Assuming that $x=0$ for the outside surface of the wall and $x=1$ for inner side
 
 $$
 \begin{align}
-  x \epsilon [0,1] \quad T(0)=30 \quad T(1)=20
+  x \epsilon [0,1] \quad T(0)=30 \quad T(1)=15
 \end{align}
 $$
 

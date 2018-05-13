@@ -12,8 +12,6 @@ layout: default
   <img src="{{ site.github.url }}/images/{{ page.image.feature }}">
 {% endif %}
 
-{{ content }}
-
 <span class="post-date">
   Written on
   {% assign d = page.date | date: "%-d"  %}
@@ -26,7 +24,11 @@ layout: default
   {{ page.date | date: "%Y" }}
   by {{ site.author.name }}
 </span>
-{% include social-sharing.html %}
+
+{{ content }}
+
+
+<!-- {% include social-sharing.html %} -->
 
 {% if page.comments %}
 <div
