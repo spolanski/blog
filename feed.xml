@@ -11,6 +11,13 @@ layout: null
       {% unless post.draft %}
         <item>
           <title>{{ post.title | xml_escape }}</title>
+          <content type="html">
+            <![CDATA[
+              <a href="{{ site.url }}{{ post.url }}">
+                <img src="{{ site.url }}/images/{{ post.image.teaser }}" width="40%" height="40%" />
+              </a>
+            ]]>
+          </content>
           <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
           <link>{{ post.url | prepend: site.url }}</link>
           <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
