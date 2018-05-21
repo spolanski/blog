@@ -6,7 +6,7 @@ layout: null
   <channel>
     <title>Numerical Simulation blog</title>
     <description>Your simulation news</description>
-    <link>{{ site.github.url }}</link>
+    <link>{{ site.url }}</link>
     {% for post in site.posts %}
       {% unless post.draft %}
         <item>
